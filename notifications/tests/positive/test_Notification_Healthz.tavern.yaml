@@ -1,0 +1,22 @@
+test_name: Verify healthz API request and 200 status code
+# https://docs.pytest.org/en/6.1.1/reference.html#ini-options-ref
+marks:
+    - smoke
+    - regression
+    - health
+
+stages:
+  - name: Check healthz API Request
+    max_retries: 1
+    request:
+        url: "{tavern.env_vars.HOST_IP:s}{apiInfo.health_check:s}"
+        method: GET
+        headers:
+          $ext:
+            function: test_utilities.helpers:generate_request_headers
+    response:
+      status_code: 200
+      json:
+        status: ok from notification
+      verify_response_with:
+        function: test_utilities.helpers:retrieve_show_resp
