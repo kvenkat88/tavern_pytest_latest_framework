@@ -1,6 +1,6 @@
 ARG PYTHON_BASE_IMAGE="python:3.8-alpine"
 FROM ${PYTHON_BASE_IMAGE}
-MAINTAINER HPS Cloud Services
+MAINTAINER XXX Cloud Services
 
 ARG TESTFLOW_USER_HOME=/usr/local/testflow
 ARG TESTFLOW_GROUP="testflow"
