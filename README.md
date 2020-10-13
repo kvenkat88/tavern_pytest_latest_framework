@@ -1,5 +1,5 @@
 #### Framework Overview
- 1. tavern-pytest API Automation and Integration automation test framework for evaluating the HPS API services.
+ 1. tavern-pytest API Automation and Integration automation test framework for evaluating the API services.
  2. This framework uses two of the most common framework available in python called Tavern(YAML based API test automation) and  Pytest(simplified and easy to use unit test plugin).
  3. By using generalized_runner.sh file we can perform bulk execution all test scenarios for all APIs available at a single point of time.
 
@@ -12,8 +12,8 @@
  2. During the runtime, headers would be automatically parsed and applied to HTTP Request function
 
 #### Host Information mention for bulk/all web services test at single time
-  1. Include local environment host info local_env_hosts.env in the format of drug-safety-host="http://localhost:5000"
-  2. Include api_gateway environment host info api_gateway_env_hosts.env in the format of drug-safety-host="https:/some.domainname.com:5000"
+  1. Include local environment host info local_env_hosts.env in the format of notifications-host="http://localhost:5000"
+  2. Include api_gateway environment host info api_gateway_env_hosts.env in the format of notifications-host="https:/some.domainname.com:5000"
   3. If you want to execute bulk tests for new environment say staging, then create a staging_env_hosts.env file and place the  host name instructions and issue the command with "staging" environment
 
 #### Points to Remember
@@ -23,7 +23,7 @@
  4. To add, modify and view pytest fixtures logic implemented, then refer tests/conftest.py of the specific API test directory.
  5. Test scenarios are categorized under positive and negative folders. Have to use and implement pytest marks for denoting smoke  and regression test scenarios.
  6. Test execution reports are available under hps-api-tavern-tests/reports/ directory.
- 7. For our project setup in Linux/Jenkins,absoluete path should be mentioned in tavern-global-cfg section of pytest.ini config file (eg.API_Tier/tests/eva/configs/env.yaml).For windows/local path in linux, we can simply use like configs/env.yaml of the specific API test directory.
+ 7. For our project setup in Linux/Jenkins,absoluete path should be mentioned in tavern-global-cfg section of pytest.ini config file (eg.API_Tier/tests/xxx/configs/env.yaml).For windows/local path in linux, we can simply use like configs/env.yaml of the specific API test directory.
  8. All of the tests are using the Tavern's Parameterization feature and if you want to add any tests for postive cases , simply include the test scenario name.
 
 #### generalized_runner.sh CLI Commands
