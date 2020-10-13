@@ -1,0 +1,8 @@
+pytest
+tavern
+pytest-html
+pyyaml
+python-box[all]
+robotframework
+robotframework-requests
+requests
